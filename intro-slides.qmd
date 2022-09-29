@@ -37,24 +37,27 @@ JJ Allaire (RStudio / Posit CEO & Quarto creator), [*Announcing Quarto*](https:/
 
 We're going to talk about it in one way: Quarto documents (.qmd) as computational notebooks that support multiple languages and outputs (slides, PDF, Word, websites, books, etc.).
 
+***See also:**[Quarto & Jupyter Notebooks](https://appsilon.com/quarto-and-jupyter-notebooks/) by [Piotr Storożenko](https://appsilon.com/author/pasza/) (Appsilon)*
+
 ## 
 
-::: columns
-::: {.column width="60%"}
-These slides are a Quarto document.
+- Create & collaborate in Observable
+- Import from Observable notebooks (example below)
+- Copy code from Observable notebooks
 
+:::: {.columns}
+::: {.column width="50%"}
 ```{ojs}
 //| echo: true
 import {chart} from "@d3/zoomable-sunburst"
 ```
 :::
-
-::: {.column width="40%"}
+::: {.column width="50%"}
 ```{ojs}
 chart
 ```
 :::
-:::
+::::
 
 ## Let's meet Quarto.
 

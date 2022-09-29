@@ -92,3 +92,11 @@ Plot.plot({
 ]
 })
 ```
+
+```{ojs}
+import {chart as panchart} from "@d3/pannable-chart"
+```
+
+```{ojs}
+panchart
+```
