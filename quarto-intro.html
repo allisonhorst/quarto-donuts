@@ -99,7 +99,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script type="module" src="quarto-intro_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="quarto-intro_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <script type="ojs-define">
-{"contents":[{"name":"x_js","value":{"temp":[32,41,43,52],"pressure":[101,104,121,132]}}]}
+{"contents":[{"name":"dfjs","value":{"temp":[9.9389,9.4186,9.1556,11.4204,9.2317,12.8787,10.9075,11.0729,6.3933,8.8313,8.4718,12.7296,7.789,9.2271,14.7615,9.2237,10.7253,9.9382,13.8484,11.8086,10.8125,6.8333,11.154,12.5679,9.5107,9.9123,8.8721,8.5165,13.3411,9.4646],"pressure":[7.066,6.4726,5.9114,5.3364,5.4649,5.2963,8.2832,5.5346,5.4998,5.5757,5.7392,6.7021,6.8503,5.6278,5.5653,5.1662,7.8846,6.3423,7.313,5.3335,4.8141,5.5634,5.1076,6.3277,6.8743,7.0959,7.3714,4.2198,5.0812,6.5524]}}]}
 </script>
 
 
@@ -131,8 +131,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="create-some-data-r">Create some data (R):</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">temp =</span> <span class="fu">c</span>(<span class="dv">32</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">52</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">pressure =</span> <span class="fu">c</span>(<span class="dv">101</span>, <span class="dv">104</span>, <span class="dv">121</span>, <span class="dv">132</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">temp =</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">pressure =</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">1</span>))</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -140,7 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="make-it-available-for-use-in-ojs-cell">Make it available for use in OJS cell:</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ojs_define</span>(<span class="at">x_js =</span> x)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ojs_define</span>(<span class="at">dfjs =</span> df)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -148,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="work-in-javascript">Work in JavaScript:</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3" data-startfrom="25" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 24;"><span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>xt <span class="op">=</span> <span class="fu">transpose</span><span class="op">(</span>x_js<span class="op">)</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>dfjs_transpose <span class="op">=</span> <span class="fu">transpose</span><span class="op">(</span>dfjs<span class="op">)</span></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4" data-startfrom="29" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 28;"><span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>xt<span class="op">.</span><span class="fu">filter</span><span class="op">(</span>d <span class="op">=&gt;</span> d<span class="op">.</span><span class="fu">temp</span> <span class="op">&gt;</span> <span class="dv">42</span><span class="op">)</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>dfjs_transpose<span class="op">.</span><span class="fu">filter</span><span class="op">(</span>d <span class="op">=&gt;</span> d<span class="op">.</span><span class="fu">temp</span> <span class="op">&gt;</span> <span class="dv">11</span><span class="op">)</span></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
@@ -171,105 +171,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
 <span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span><span class="op">(</span><span class="fu">transpose</span><span class="op">(</span>x_js<span class="op">),</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"temp"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"pressure"</span><span class="op">})</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span><span class="op">(</span><span class="fu">transpose</span><span class="op">(</span>dfjs<span class="op">),</span> </span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span>x<span class="op">:</span> <span class="st">"temp"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"pressure"</span><span class="op">,</span> fill<span class="op">:</span> <span class="st">"purple"</span><span class="op">})</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="expression">
 
 </div>
 </div>
 </div>
+</section>
+<section id="import-examples" class="level2">
+<h2 class="anchored" data-anchor-id="import-examples">Import examples:</h2>
+<p>The following is imported from the <a href="https://observablehq.com/@d3/pannable-chart">“Pannable Chart”</a> notebook by Mike Bostock (Copyright 2019 - 2021 Observable, Inc., available by ISC License).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-startfrom="43" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 42;"><span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-startfrom="48" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 47;"><span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">{chart as panchart} from "@d3/pannable-chart"</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-4" data-nodetype="expression">
+<div id="ojs-cell-4" data-nodetype="declaration">
 
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" data-startfrom="52" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 51;"><span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>panchart</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p>The following is imported from the <a href="https://observablehq.com/@observablehq/summary-table">“Summary Table”</a> notebook by Mike Freeman (Copyright 2021 Observable, available by ISC License).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" data-startfrom="59" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 58;"><span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">{viewof summary_data} from "@observablehq/summary-table"</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>viewof summary_data</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-2" data-nodetype="expression">
+
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="import-example" class="level2">
-<h2 class="anchored" data-anchor-id="import-example">Import example:</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-startfrom="53" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 52;"><span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">{chart} from "@d3/zoomable-sunburst"</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-startfrom="57" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 56;"><span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>chart</span>
-<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-6" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</section>
-<section id="some-things-users-are-excited-about" class="level2">
-<h2 class="anchored" data-anchor-id="some-things-users-are-excited-about">Some things users are excited about:</h2>
+<section id="extras-if-time" class="level2">
+<h2 class="anchored" data-anchor-id="extras-if-time">Extras if time:</h2>
 <ul>
 <li>Visual editor</li>
 <li>Citations</li>
 <li>Layouts (e.g.&nbsp;columns, plots in margin, full width)</li>
 </ul>
-<!--## Just a Python example:-->
-<div class="cell" data-eval="false" data-include="false">
-<div class="sourceCode cell-code" id="cb9" data-startfrom="86" data-source-offset="25"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 85;"><span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="co">//| eval: false</span></span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="co">//| include: false</span></span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
-<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
-<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>  Plot<span class="op">.</span><span class="fu">dot</span><span class="op">(</span>x_py<span class="op">,</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"temp"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"pressure"</span><span class="op">})</span></span>
-<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
-<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
-<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display hidden">
-<div id="ojs-cell-7" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-startfrom="96" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 95;"><span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">{chart as panchart} from "@d3/pannable-chart"</span></span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-8" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-startfrom="100" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 99;"><span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>panchart</span>
-<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-9" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </section>
 
 </main>
 <!-- /main column -->
+
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"xt = transpose(x_js)\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"xt.filter(d => d.temp > 42)\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"Plot.plot({\n  \n  marks: [\n    Plot.dot(transpose(x_js), {x: \"temp\", y: \"pressure\"})\n  ]\n  \n})\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.dot\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"import {chart} from \"@d3/zoomable-sunburst\"\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"chart\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"import {chart as panchart} from \"@d3/pannable-chart\"\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"panchart\n"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"dfjs_transpose = transpose(dfjs)\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"dfjs_transpose.filter(d => d.temp > 11)\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"Plot.plot({\n  \n  marks: [\n    Plot.dot(transpose(dfjs), \n    {x: \"temp\", y: \"pressure\", fill: \"purple\"})\n  ]\n  \n})\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"import {chart as panchart} from \"@d3/pannable-chart\"\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"panchart\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"import {viewof summary_data} from \"@observablehq/summary-table\"\nviewof summary_data\n"}]}
 </script>
 <script type="module">
 window._ojs.paths.runtimeToDoc = "../../..";

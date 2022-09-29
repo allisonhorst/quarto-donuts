@@ -10,88 +10,40 @@ editor: visual
 ## Create some data (R):
 
 ```{r}
-x <- data.frame(temp = c(32, 41, 43, 52),
-                pressure = c(101, 104, 121, 132))
+df <- data.frame(temp = rnorm(30, mean = 10, sd = 2),
+                pressure = rnorm(30, mean = 6, sd = 1))
 ```
 
 ## Make it available for use in OJS cell:
 
 ```{r}
-ojs_define(x_js = x)
+ojs_define(dfjs = df)
 ```
 
 ## Work in JavaScript:
 
 ```{ojs}
-xt = transpose(x_js)
+dfjs_transpose = transpose(dfjs)
 ```
 
 ```{ojs}
-xt.filter(d => d.temp > 42)
+dfjs_transpose.filter(d => d.temp > 11)
 ```
 
 ```{ojs}
 Plot.plot({
   
   marks: [
-    Plot.dot(transpose(x_js), {x: "temp", y: "pressure"})
+    Plot.dot(transpose(dfjs), 
+    {x: "temp", y: "pressure", fill: "purple"})
   ]
   
 })
 ```
 
-```{ojs}
-Plot.plot({
-  marks: [
-    Plot.dot
-  ]
-})
-```
+## Import examples:
 
-## Import example:
-
-```{ojs}
-import {chart} from "@d3/zoomable-sunburst"
-```
-
-```{ojs}
-chart
-```
-
-## Some things users are excited about:
-
--   Visual editor
--   Citations
--   Layouts (e.g. columns, plots in margin, full width)
-
-<!--## Just a Python example:-->
-
-```{python}
-#| eval: false
-#| include: false
-import numpy as np
-
-temp = [20, 40, 60, 80]
-pressure = [10, 12, 17, 19]
-
-x = np.array([temp, pressure])
-```
-
-```{python}
-#| eval: false
-#| include: false
-ojs_define(x_py = x)
-```
-
-```{ojs}
-//| eval: false
-//| include: false
-Plot.plot({
-  marks: [
-  Plot.dot(x_py, {x: "temp", y: "pressure"})
-]
-})
-```
+The following is imported from the ["Pannable Chart"](https://observablehq.com/@d3/pannable-chart) notebook by Mike Bostock (Copyright 2019 - 2021 Observable, Inc., available by ISC License).
 
 ```{ojs}
 import {chart as panchart} from "@d3/pannable-chart"
@@ -100,3 +52,17 @@ import {chart as panchart} from "@d3/pannable-chart"
 ```{ojs}
 panchart
 ```
+
+
+The following is imported from the ["Summary Table"](https://observablehq.com/@observablehq/summary-table) notebook by Mike Freeman (Copyright 2021 Observable, available by ISC License). 
+
+```{ojs}
+import {viewof summary_data} from "@observablehq/summary-table"
+viewof summary_data
+```
+
+## Extras if time:  
+
+-   Visual editor
+-   Citations
+-   Layouts (e.g. columns, plots in margin, full width)
