@@ -54,15 +54,14 @@ import {chart as panchart} from "@d3/pannable-chart"
 panchart
 ```
 
-
-The following is imported from the ["Summary Table"](https://observablehq.com/@observablehq/summary-table) notebook by Mike Freeman (Copyright 2021 Observable, available by ISC License). 
+The following is imported from the ["Summary Table"](https://observablehq.com/@observablehq/summary-table) notebook by Mike Freeman (Copyright 2021 Observable, available by ISC License).
 
 ```{ojs}
 import {viewof summary_data} from "@observablehq/summary-table"
 viewof summary_data
 ```
 
-## Extras if time:  
+## Extras if time:
 
 -   Visual editor
 -   Citations

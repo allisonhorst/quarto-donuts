@@ -17,9 +17,7 @@ library(palmerpenguins)
 
 -   **1995**: Official R release (programming language for statistical computing & graphics)
 
--   **2009:** JJ Allaire founds RStudio (company)
-
--   **2011:** RStudio IDE announced (integrated development environment for R)
+-   **2009:** JJ Allaire founds RStudio (company), a couple years later RStudio IDE announced
 
 -   **\~2013:** R Markdown - a computational notebook widely adopted by R users, eventually extended to an ecosystem of packages for all kinds of publishing
 
@@ -42,8 +40,7 @@ We're going to talk about it in one way: Quarto documents (.qmd) as computationa
 ## 
 
 - Create & collaborate in Observable
-- Import from Observable notebooks (example below)
-- Copy code from Observable notebooks
+- Import/copy from Observable (example below)
 
 :::: {.columns}
 ::: {.column width="50%"}
