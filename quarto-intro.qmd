@@ -1,0 +1,94 @@
+---
+title: "Quarto Intro"
+format: 
+  html: 
+    execute:
+      echo: fenced
+editor: visual
+---
+
+## Create some data (R):
+
+```{r}
+x <- data.frame(temp = c(32, 41, 43, 52),
+                pressure = c(101, 104, 121, 132))
+```
+
+## Make it available for use in OJS cell:
+
+```{r}
+ojs_define(x_js = x)
+```
+
+## Work in JavaScript:
+
+```{ojs}
+xt = transpose(x_js)
+```
+
+```{ojs}
+xt.filter(d => d.temp > 42)
+```
+
+```{ojs}
+Plot.plot({
+  
+  marks: [
+    Plot.dot(transpose(x_js), {x: "temp", y: "pressure"})
+  ]
+  
+})
+```
+
+```{ojs}
+Plot.plot({
+  marks: [
+    Plot.dot
+  ]
+})
+```
+
+## Import example:
+
+```{ojs}
+import {chart} from "@d3/zoomable-sunburst"
+```
+
+```{ojs}
+chart
+```
+
+## Some things users are excited about:
+
+-   Visual editor
+-   Citations
+-   Layouts (e.g. columns, plots in margin, full width)
+
+<!--## Just a Python example:-->
+
+```{python}
+#| eval: false
+#| include: false
+import numpy as np
+
+temp = [20, 40, 60, 80]
+pressure = [10, 12, 17, 19]
+
+x = np.array([temp, pressure])
+```
+
+```{python}
+#| eval: false
+#| include: false
+ojs_define(x_py = x)
+```
+
+```{ojs}
+//| eval: false
+//| include: false
+Plot.plot({
+  marks: [
+  Plot.dot(x_py, {x: "temp", y: "pressure"})
+]
+})
+```

@@ -1,0 +1,63 @@
+---
+title: "Meet Quarto"
+subtitle: "Data Analysis Donuts"
+date: "2022-09-29"
+format: 
+  revealjs: 
+    incremental: true 
+editor: visual
+---
+
+```{r}
+#| include: false
+library(palmerpenguins)
+```
+
+## A brief history
+
+-   **1995**: Official R release (programming language for statistical computing & graphics)
+
+-   **2009:** JJ Allaire founds RStudio (company)
+
+-   **2011:** RStudio IDE announced (integrated development environment for R)
+
+-   **\~2013:** R Markdown - a computational notebook widely adopted by R users, eventually extended to an ecosystem of packages for all kinds of publishing
+
+-   **2022:** Quarto officially enters the scene (and RStudio becomes [Posit](https://www.rstudio.com/tags/posit/))
+
+## Why Quarto?
+
+JJ Allaire (RStudio / Posit CEO & Quarto creator), [*Announcing Quarto*](https://www.rstudio.com/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system/):
+
+> "...R Markdown is fundamentally tied to R, which severely limits the number of practitioners it can benefit, Quarto is RStudio's attempt to bring R Markdown to everyone! \[...\] **Quarto was designed to be multilingual, beginning with R, Python, Javascript, and Julia,** with the idea that it will work even for languages that don't yet exist."
+
+## So...what is it?
+
+> ### Quarto^®^ is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/)
+
+We're going to talk about it in one way: Quarto documents (.qmd) as computational notebooks that support multiple languages and outputs (slides, PDF, Word, websites, books, etc.).
+
+## 
+
+::: columns
+::: {.column width="60%"}
+These slides are a Quarto document.
+
+```{ojs}
+//| echo: true
+import {chart} from "@d3/zoomable-sunburst"
+```
+:::
+
+::: {.column width="40%"}
+```{ojs}
+chart
+```
+:::
+:::
+
+## Let's meet Quarto.
+
+![](images/paste-2859A56F.png){fig-align="center" width="184"}
+
+***Note:** I'm introducing Quarto as a **user** (I have ideas about what it does), not as a **developer** (I have very few ideas about how it works)*

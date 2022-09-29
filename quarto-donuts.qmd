@@ -18,6 +18,12 @@ library(palmerpenguins)
 
 ## What is Quarto?
 
+| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
 From [Quarto.org](https://quarto.org/):
 
 > ### "Quarto^®^ is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/)
@@ -66,7 +72,7 @@ import {chart} from "@allisonhorst/fire-mortality-tree-counts"
 chart
 ```
 
-### Or all JS in Quarto: 
+### Or all JS in Quarto:
 
 Work in OJS cells:
 
@@ -154,7 +160,7 @@ ggplot(data = penguins) +
 
 -   Citations (incl. integration w/ Zotero) & footnotes [@waskom2017]
 
--   Document conversions (e.g. from .qmd to .ipynb & back)
+-   Document conversions (e.g. from .qmd to .ipynb & back)[@chen2018]
 
 ## Resources
 
